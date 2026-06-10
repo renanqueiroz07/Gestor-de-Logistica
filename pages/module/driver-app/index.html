@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2Brothers - Driver App</title>
+<link rel="icon" type="image/svg+xml" href="../../../favicon.svg">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../../inicio.server/delivery_b2b_dashboard.css">
+<link rel="stylesheet" href="../order-ingestion/styles/order-ingestion.css">
+<link rel="stylesheet" href="./styles/driver-app.css">
+<script defer src="../../../inicio.server/theme.js"></script>
+</head>
+<body>
+<div class="app">
+  <div class="topbar"><div class="logo"><div class="logo-dot"></div>2Brothers <span style="font-size:11px;color:var(--muted);font-weight:400;margin-left:4px">B2B Delivery</span></div><div class="topbar-right"><div class="time-display" id="clock">00:00:00</div><div class="status-badge"><div class="status-dot"></div>Realtime GPS</div><div class="avatar">RH</div></div></div>
+  <div class="sidebar">
+    <div class="nav-item" onclick="window.location.href='../../../inicio.server/delivery_b2b_dashboard.html'">Dashboard</div>
+    <div class="nav-item" onclick="window.location.href='../order-ingestion/'">Ingestao de Pedidos</div>
+    <div class="nav-item" onclick="window.location.href='../routing-engine/'">Roteamento Inteligente</div>
+    <div class="nav-item active">App do Motoboy</div>
+    <div class="nav-item" onclick="window.location.href='../entregadores/'">Entregadores</div>
+  </div>
+  <main class="main feature-main">
+    <section class="feature-header"><div><div class="eyebrow">React Native specification</div><h1>App do Motoboy</h1><p>Fluxo mobile integrado ao dashboard com push FCM, JWT, GPS em tempo real, offline-first e comprovante de entrega.</p></div><button class="btn-sm active" id="syncBtn">Simular sync offline</button></section>
+    <section class="driver-grid">
+      <div class="phone-frame">
+        <div class="phone-top">Nova rota atribuida</div>
+        <div class="route-card-mobile"><strong>Rota #RT-8841</strong><span>4 paradas | SLA 42 min</span><button>Aceitar rota</button><button class="ghost">Recusar</button></div>
+        <div class="waypoint done">Coletado - Bella Napoli</div>
+        <div class="waypoint active">Em rota - Rua A, 123</div>
+        <div class="waypoint">Entregue - Av B, 456</div>
+        <div class="waypoint">Problema - Foto/assinatura</div>
+      </div>
+      <div class="orders-panel"><div class="panel-header"><div class="panel-title">Requisitos tecnicos</div></div><div class="panel-body req-list"><div>React Native com JWT + refresh token</div><div>FCM para notificacao push</div><div>WebSocket ou Firebase Realtime Database</div><div>Offline-first com armazenamento local</div><div>Deep link Google Maps / Waze</div><div>GPS a cada 10s configuravel</div></div></div>
+      <div class="orders-panel wide"><div class="panel-header"><div class="panel-title">Eventos em tempo real</div></div><div class="panel-body stream-list" id="driverEvents"></div></div>
+    </section>
+  </main>
+</div>
+<script src="./scripts/driver-app.js"></script>
+</body>
+</html>

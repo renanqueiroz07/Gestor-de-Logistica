@@ -1,0 +1,976 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>2brothers” Gestão Inteligente de Entregadores B2B</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Familjen+Grotesk:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <div class="nav-logo">
+      <a href="#" class="longo">
+        <img src="img/LogoTcc.png" alt="logo do projeto" style="width: 180px; height: auto; display: block;" />
+      </a>
+    </div>
+    <div class="nav-center">
+      <a href="#como-funciona">Como Funciona</a>
+      <a href="#modelo">Modelo B2B</a>
+      <a href="inicio.server/delivery_b2b_dashboard.html" target="_blank">Painel</a>
+      <a href="#clientes">Para Clientes</a>
+      <a href="#planos">Planos</a>
+      <a href="https://aistudio.google.com/apps/2506cae8-d7d6-4f54-a99b-ca175e6ccc35?showPreview=true&showAssistant=true&fullscreenApplet=true" target="_blank"> App motoboy</a>
+    </div>
+    <div class="nav-right">
+      <a href="#contato" class="btn-ghost">Entrar</a>
+      <a href="#contato" class="btn-primary">Solicitar Demo</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-left">
+      <div class="hero-eyebrow">Plataforma B2B de Entregadores</div>
+      <h1>Gerencie sua<br>demanda de<br>motoboys com <em>precisão</em></h1>
+      <p class="hero-desc">
+        Sua pizzaria vende 1.000 pizzas no fim de semana? Defina quantos motoboys precisa por dia — mínimo e máximo — e
+        a 2brothers cuida de tudo: contratação, gestão e pagamento.
+      </p>
+      <div class="hero-actions">
+        <a href="#contato" class="btn-primary btn-lg">Solicitar demonstração</a>
+        <a href="#como-funciona" class="btn-ghost btn-lg">Ver como funciona</a>
+      </div>
+      <div class="hero-trust">
+        <div class="trust-item">
+          <div class="trust-num">+340</div>
+          <div class="trust-label">Clientes ativos</div>
+        </div>
+        <div class="trust-item">
+          <div class="trust-num">+8.200</div>
+          <div class="trust-label">Motoboys na rede</div>
+        </div>
+        <div class="trust-item">
+          <div class="trust-num">99,2%</div>
+          <div class="trust-label">Taxa de cobertura</div>
+        </div>
+        <div class="trust-item">
+          <div class="trust-num">0</div>
+          <div class="trust-label">Vínculos CLT p/ você</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MINI PAINEL HERO -->
+    <div class="hero-panel">
+      <div class="panel-topbar">
+        <div class="dot dot-r"></div>
+        <div class="dot dot-y"></div>
+        <div class="dot dot-g"></div>
+        <div class="panel-title-bar">2brothers — Pizzaria Bella Napoli</div>
+      </div>
+      <div class="panel-body">
+        <div class="panel-section-label">Cliente ativo</div>
+        <div class="client-info">
+          <div class="client-avatar">🍕</div>
+          <div>
+            <div class="client-name">Pizzaria Bella Napoli</div>
+            <div class="client-meta">São Paulo, SP · Plano Business</div>
+          </div>
+          <div class="client-badge">✓ Ativo</div>
+        </div>
+
+        <div class="panel-section-label">Demanda desta semana</div>
+        <div class="demanda-grid">
+          <div class="dia-col">
+            <div class="dia-label">Seg</div>
+            <div class="dia-off">
+              <div class="dia-off-label">folga</div>
+            </div>
+            <div class="dia-nums">—</div>
+          </div>
+          <div class="dia-col">
+            <div class="dia-label">Ter</div>
+            <div class="dia-off">
+              <div class="dia-off-label">folga</div>
+            </div>
+            <div class="dia-nums">—</div>
+          </div>
+          <div class="dia-col">
+            <div class="dia-label">Qua</div>
+            <div class="dia-bar-wrap">
+              <div class="bar-min" style="height:28px"></div>
+              <div class="bar-max" style="height:38px"></div>
+            </div>
+            <div class="dia-nums">8–12</div>
+          </div>
+          <div class="dia-col">
+            <div class="dia-label">Qui</div>
+            <div class="dia-bar-wrap">
+              <div class="bar-min" style="height:28px"></div>
+              <div class="bar-max" style="height:38px"></div>
+            </div>
+            <div class="dia-nums">8–12</div>
+          </div>
+          <div class="dia-col">
+            <div class="dia-label">Sex</div>
+            <div class="dia-bar-wrap">
+              <div class="bar-min" style="height:42px"></div>
+              <div class="bar-max" style="height:58px"></div>
+            </div>
+            <div class="dia-nums">12–18</div>
+          </div>
+          <div class="dia-col">
+            <div class="dia-label">Sáb</div>
+            <div class="dia-bar-wrap">
+              <div class="bar-min" style="height:50px"></div>
+              <div class="bar-max" style="height:70px"></div>
+            </div>
+            <div class="dia-nums">15–22</div>
+          </div>
+          <div class="dia-col">
+            <div class="dia-label">Dom</div>
+            <div class="dia-bar-wrap">
+              <div class="bar-min" style="height:50px"></div>
+              <div class="bar-max" style="height:70px"></div>
+            </div>
+            <div class="dia-nums">15–22</div>
+          </div>
+        </div>
+
+        <div class="panel-section-label">Motoboys hoje (Sábado)</div>
+        <div class="mb-status-list">
+          <div class="mb-row">
+            <div class="mb-dot active"></div>
+            <div class="mb-name">Carlos M.</div>
+            <div class="mb-entregas">18 entregas</div>
+            <div class="mb-badge em-rota">Em rota</div>
+          </div>
+          <div class="mb-row">
+            <div class="mb-dot active"></div>
+            <div class="mb-name">Rodrigo S.</div>
+            <div class="mb-entregas">14 entregas</div>
+            <div class="mb-badge em-rota">Em rota</div>
+          </div>
+          <div class="mb-row">
+            <div class="mb-dot idle"></div>
+            <div class="mb-name">Felipe A.</div>
+            <div class="mb-entregas">9 entregas</div>
+            <div class="mb-badge disponivel">Disponível</div>
+          </div>
+        </div>
+
+        <div class="mini-metrics">
+          <div class="mini-card">
+            <div class="mini-val">312</div>
+            <div class="mini-lbl">Entregas hoje</div>
+          </div>
+          <div class="mini-card">
+            <div class="mini-val">96%</div>
+            <div class="mini-lbl">Pontualidade</div>
+          </div>
+          <div class="mini-card">
+            <div class="mini-val">18<small style="font-size:0.7rem">min</small></div>
+            <div class="mini-lbl">Tempo médio</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- COMO FUNCIONA -->
+  <section class="como" id="como-funciona">
+    <div class="section-eyebrow">Processo</div>
+    <div class="section-title">Como funciona o<br>modelo <em>2brothers</em></div>
+    <div class="section-desc">Três etapas simples separam você de ter uma operação de entregas profissional, sem
+      contratar ninguém diretamente.</div>
+
+    <div class="como-layout">
+      <div class="steps">
+        <div class="step active" onclick="activateStep(this)">
+          <div class="step-num">1</div>
+          <div class="step-content">
+            <h4>Contrato com a 2brothers</h4>
+            <p>Seu estabelecimento assina um contrato B2B com a 2brothers. Nenhum motoboy tem vínculo trabalhista com
+              você — todos são geridos por nós.</p>
+          </div>
+        </div>
+        <div class="step" onclick="activateStep(this)">
+          <div class="step-num">2</div>
+          <div class="step-content">
+            <h4>Você define a demanda por dia</h4>
+            <p>No painel, você configura para cada dia da semana: se opera ou não, o mínimo e o máximo de motoboys que
+              deseja. Ex: Sábado → mín. 15 / máx. 22.</p>
+          </div>
+        </div>
+        <div class="step" onclick="activateStep(this)">
+          <div class="step-num">3</div>
+          <div class="step-content">
+            <h4>2brothers escala e gerencia</h4>
+            <p>Baseado na sua demanda configurada, escalamos os motoboys certos. Pagamentos, documentação, substituições
+              e treinamentos ficam com a gente.</p>
+          </div>
+        </div>
+        <div class="step" onclick="activateStep(this)">
+          <div class="step-num">4</div>
+          <div class="step-content">
+            <h4>Você acompanha em tempo real</h4>
+            <p>Dashboard completo com localização, número de entregas, tempos médios e relatórios financeiros. Tudo
+              acessível em qualquer dispositivo.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- CONFIG PANEL INTERATIVO -->
+      <div class="config-panel">
+        <div class="config-panel-header">
+          <h3>⚙️ Configurar Demanda Semanal</h3>
+          <span>Pizzaria Bella Napoli</span>
+        </div>
+        <div class="config-body">
+
+          <div class="day-config-row inactive">
+            <div class="day-toggle"><input type="checkbox" id="t1"><label class="toggle-track" for="t1"></label></div>
+            <div class="day-name">Segunda</div>
+            <div class="range-wrap"><span class="range-label">Mín</span><span class="range-val">—</span></div>
+            <div class="day-status-tag tag-off">Folga</div>
+          </div>
+
+          <div class="day-config-row inactive">
+            <div class="day-toggle"><input type="checkbox" id="t2"><label class="toggle-track" for="t2"></label></div>
+            <div class="day-name">Terça</div>
+            <div class="range-wrap"><span class="range-label">Mín</span><span class="range-val">—</span></div>
+            <div class="day-status-tag tag-off">Folga</div>
+          </div>
+
+          <div class="day-config-row">
+            <div class="day-toggle"><input type="checkbox" id="t3" checked><label class="toggle-track" for="t3"></label>
+            </div>
+            <div class="day-name">Quarta</div>
+            <div class="range-wrap">
+              <span class="range-label">Mín <b id="v3min">8</b></span>
+              <input type="range" class="range-input" min="1" max="30" value="8" style="--pct:25%"
+                oninput="updateRange(this,'v3min')">
+              <span class="range-label">Máx <b id="v3max">12</b></span>
+              <input type="range" class="range-input" min="1" max="30" value="12" style="--pct:38%"
+                oninput="updateRange(this,'v3max')">
+            </div>
+            <div class="day-status-tag tag-active">Ativo</div>
+          </div>
+
+          <div class="day-config-row">
+            <div class="day-toggle"><input type="checkbox" id="t4" checked><label class="toggle-track" for="t4"></label>
+            </div>
+            <div class="day-name">Quinta</div>
+            <div class="range-wrap">
+              <span class="range-label">Mín <b id="v4min">8</b></span>
+              <input type="range" class="range-input" min="1" max="30" value="8" style="--pct:25%"
+                oninput="updateRange(this,'v4min')">
+              <span class="range-label">Máx <b id="v4max">12</b></span>
+              <input type="range" class="range-input" min="1" max="30" value="12" style="--pct:38%"
+                oninput="updateRange(this,'v4max')">
+            </div>
+            <div class="day-status-tag tag-active">Ativo</div>
+          </div>
+
+          <div class="day-config-row">
+            <div class="day-toggle"><input type="checkbox" id="t5" checked><label class="toggle-track" for="t5"></label>
+            </div>
+            <div class="day-name">Sexta</div>
+            <div class="range-wrap">
+              <span class="range-label">Mín <b id="v5min">12</b></span>
+              <input type="range" class="range-input" min="1" max="30" value="12" style="--pct:38%"
+                oninput="updateRange(this,'v5min')">
+              <span class="range-label">Máx <b id="v5max">18</b></span>
+              <input type="range" class="range-input" min="1" max="30" value="18" style="--pct:57%"
+                oninput="updateRange(this,'v5max')">
+            </div>
+            <div class="day-status-tag tag-active">Ativo</div>
+          </div>
+
+          <div class="day-config-row">
+            <div class="day-toggle"><input type="checkbox" id="t6" checked><label class="toggle-track" for="t6"></label>
+            </div>
+            <div class="day-name">Sábado</div>
+            <div class="range-wrap">
+              <span class="range-label">Mín <b id="v6min">15</b></span>
+              <input type="range" class="range-input" min="1" max="30" value="15" style="--pct:48%"
+                oninput="updateRange(this,'v6min')">
+              <span class="range-label">Máx <b id="v6max">22</b></span>
+              <input type="range" class="range-input" min="1" max="30" value="22" style="--pct:70%"
+                oninput="updateRange(this,'v6max')">
+            </div>
+            <div class="day-status-tag tag-active">Pico 🔥</div>
+          </div>
+
+          <div class="day-config-row">
+            <div class="day-toggle"><input type="checkbox" id="t7" checked><label class="toggle-track" for="t7"></label>
+            </div>
+            <div class="day-name">Domingo</div>
+            <div class="range-wrap">
+              <span class="range-label">Mín <b id="v7min">15</b></span>
+              <input type="range" class="range-input" min="1" max="30" value="15" style="--pct:48%"
+                oninput="updateRange(this,'v7min')">
+              <span class="range-label">Máx <b id="v7max">22</b></span>
+              <input type="range" class="range-input" min="1" max="30" value="22" style="--pct:70%"
+                oninput="updateRange(this,'v7max')">
+            </div>
+            <div class="day-status-tag tag-active">Pico 🔥</div>
+          </div>
+
+          <div class="config-summary">
+            <div>
+              <div class="config-summary-text">Total de motoboys disponibilizados/semana</div>
+              <div style="font-size:0.72rem; color:rgba(255,255,255,0.5); margin-top:0.15rem">Escalonado automaticamente
+                pela 2brothers</div>
+            </div>
+            <div class="config-summary-val">~86</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MODELO B2B -->
+  <section class="modelo" id="modelo">
+    <div class="section-eyebrow">Modelo de Negócio</div>
+    <div class="section-title">Por que o modelo B2B<br><em>funciona</em> para você</div>
+    <div class="section-desc">O estabelecimento paga pelo serviço de fornecimento de entregadores. A 2brothers assume
+      toda a complexidade trabalhista e operacional.</div>
+    <div class="modelo-grid">
+      <div class="modelo-card">
+        <div class="mc-icon red">⚖️</div>
+        <h3>Zero vínculos trabalhistas</h3>
+        <p>Todos os motoboys são contratados pela 2brothers como PJ/autônomos. Seu estabelecimento nunca tem relação de
+          emprego com os entregadores — eliminando riscos de processos trabalhistas.</p>
+        <span class="mc-tag red">Segurança jurídica</span>
+      </div>
+      <div class="modelo-card ">
+        <div class="mc-icon dark">📊</div>
+        <h3>Você controla a demanda</h3>
+        <p>Defina o número mínimo e máximo de motoboys por dia da semana. Se sua pizzaria precisa de 10 a 15 na segunda
+          e 20 a 30 no sábado, configure assim — e a gente cumpre.</p>
+        <span class="mc-tag white">Core do produto</span>
+      </div>
+      <div class="modelo-card">
+        <div class="mc-icon green">💰</div>
+        <h3>Custo previsível e escalável</h3>
+        <p>Pague apenas pelos motoboys que usar, dentro da faixa configurada. Nos dias de folga, custo zero. Nos picos,
+          você já tem os reforços garantidos sem surpresas.</p>
+        <span class="mc-tag green">Eficiência financeira</span>
+      </div>
+      <div class="modelo-card">
+        <div class="mc-icon red">✅</div>
+        <h3>Substituição automática</h3>
+        <p>Se um motoboy não comparece, a 2brothers aciona automaticamente um substituto para garantir que sua operação
+          não pare. Cobertura de 99,2% garantida em contrato.</p>
+        <span class="mc-tag red">Confiabilidade</span>
+      </div>
+      <div class="modelo-card">
+        <div class="mc-icon green">✔</div>
+        <h3>Gestão centralizada</h3>
+        <p>Um único painel para ver todos os motoboys em tempo real, histórico de entregas, métricas de desempenho e
+          relatórios financeiros. Sem planilhas, sem WhatsApp desordenado.</p>
+        <span class="mc-tag green">Tecnologia</span>
+      </div>
+      <div class="modelo-card">
+        <div class="mc-icon red">🛡️</div>
+        <h3>Seguro e conformidade</h3>
+        <p>Todos os entregadores possuem seguro de acidentes pessoais e documentação em dia. A 2brothers verifica CNH,
+          CRLV e habilitação periodicamente.</p>
+        <span class="mc-tag red">Compliance</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- DASHBOARD DEMO -->
+  <section class="dashboard" id="dashboard">
+    <div class="section-eyebrow">Painel de Controle</div>
+    <div class="section-title">Visibilidade total da<br>sua operação em <em>tempo real</em></div>
+    <div class="section-desc">Do número de motoboys ativos ao ticket médio de entrega — tudo em uma interface limpa e
+      intuitiva.</div>
+    <div style="text-align: center; margin: 2rem 0;">
+      <a href="inicio.server/delivery_b2b_dashboard.html" target="_blank" class="btn-primary"
+        style="display: inline-block;">Acessar Dashboard Interativo</a>
+    </div>
+
+    <div class="dash-wrap">
+      <div class="dash-topbar">
+        <div class="dash-topbar-logo">2brothers — Dashboard</div>
+        <div class="dash-topbar-right">
+          <div class="dash-topbar-pill">🍕 Bella Napoli</div>
+          <div class="dash-topbar-pill active">• Ao vivo</div>
+        </div>
+      </div>
+      <div class="dash-body">
+        <!-- Sidebar -->
+        <div class="dash-sidebar">
+          <div class="sidebar-section">
+            <div class="sidebar-label">Principal</div>
+            <div class="sidebar-item active"><span class="icon">📊</span> Dashboard</div>
+            <div class="sidebar-item"><span class="icon">🏍</span> Motoboys <span class="badge">18</span></div>
+            <div class="sidebar-item"><span class="icon">📦</span> Entregas</div>
+            <div class="sidebar-item"><span class="icon">📍</span> Mapa ao vivo</div>
+          </div>
+          <div class="sidebar-section">
+            <div class="sidebar-label">Configuração</div>
+            <div class="sidebar-item"><span class="icon">🗓</span> Demanda semanal</div>
+            <div class="sidebar-item"><span class="icon">💳</span> Financeiro</div>
+            <div class="sidebar-item"><span class="icon">📈</span> Relatórios</div>
+            <div class="sidebar-item"><span class="icon">⚙️</span> Configurações</div>
+          </div>
+          <div class="sidebar-section">
+            <div class="sidebar-label">Suporte</div>
+            <div class="sidebar-item"><span class="icon">💬</span> Chat 2brothers <span class="badge">2</span></div>
+            <div class="sidebar-item"><span class="icon">✓</span> Ajuda</div>
+          </div>
+        </div>
+
+        <!-- Conteúdo -->
+        <div class="dash-content">
+          <div class="dash-content-header">
+            <h2>Visão geral de hoje — Sábado</h2>
+            <div class="dash-date-pill">📅 01 de Abril, 2026 · 19:42</div>
+          </div>
+
+          <div class="kpi-row">
+            <div class="kpi">
+              <div class="kpi-top">
+                <div class="kpi-icon r">🏍</div>
+                <div class="kpi-delta up">↑ +3</div>
+              </div>
+              <div class="kpi-val">18</div>
+              <div class="kpi-label">Motoboys ativos agora</div>
+            </div>
+            <div class="kpi">
+              <div class="kpi-top">
+                <div class="kpi-icon g">📦</div>
+                <div class="kpi-delta up">↑ 12%</div>
+              </div>
+              <div class="kpi-val">312</div>
+              <div class="kpi-label">Entregas realizadas hoje</div>
+            </div>
+            <div class="kpi">
+              <div class="kpi-top">
+                <div class="kpi-icon b">➕</div>
+                <div class="kpi-delta down">↓ 2min</div>
+              </div>
+              <div class="kpi-val">18m</div>
+              <div class="kpi-label">Tempo médio de entrega</div>
+            </div>
+            <div class="kpi">
+              <div class="kpi-top">
+                <div class="kpi-icon y">✔</div>
+                <div class="kpi-delta up">↑ 0.1</div>
+              </div>
+              <div class="kpi-val">4.8</div>
+              <div class="kpi-label">Avaliação média clientes</div>
+            </div>
+          </div>
+
+          <div class="charts-row">
+            <!-- Gráfico de barras -->
+            <div class="chart-card">
+              <div class="chart-title">Entregas por hora (hoje)</div>
+              <div class="bar-chart" id="barChart"></div>
+            </div>
+            <!-- Donut -->
+            <div class="chart-card">
+              <div class="chart-title">Status dos motoboys</div>
+              <div class="donut-wrap">
+                <svg class="donut-svg" width="90" height="90" viewBox="0 0 90 90">
+                  <circle cx="45" cy="45" r="35" fill="none" stroke="#edeae2" stroke-width="12" />
+                  <circle cx="45" cy="45" r="35" fill="none" stroke="#d63f2a" stroke-width="12"
+                    stroke-dasharray="110 110" stroke-dashoffset="27" stroke-linecap="round"
+                    transform="rotate(-90 45 45)" />
+                  <circle cx="45" cy="45" r="35" fill="none" stroke="#f59e0b" stroke-width="12"
+                    stroke-dasharray="33 187" stroke-dashoffset="-83" stroke-linecap="round"
+                    transform="rotate(-90 45 45)" />
+                  <text x="45" y="49" text-anchor="middle" font-size="13" font-weight="700" fill="#111110"
+                    font-family="'Familjen Grotesk'">18</text>
+                </svg>
+                <div class="donut-legend">
+                  <div class="legend-item">
+                    <div class="legend-dot" style="background:#d63f2a"></div>Em rota — 10
+                  </div>
+                  <div class="legend-item">
+                    <div class="legend-dot" style="background:#f59e0b"></div>Disponível — 5
+                  </div>
+                  <div class="legend-item">
+                    <div class="legend-dot" style="background:#edeae2"></div>Pausa — 3
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tabela de motoboys -->
+          <div class="chart-card">
+            <div class="chart-title">Motoboys escalados hoje</div>
+            <table class="mb-table">
+              <thead>
+                <tr>
+                  <th>Nome</th>
+                  <th>Status</th>
+                  <th>Entregas</th>
+                  <th>Meta</th>
+                  <th>Avaliação</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><b>Carlos Mendes</b></td>
+                  <td>
+                    <div class="status-dot-row">
+                      <div class="sdot g"></div> Em rota
+                    </div>
+                  </td>
+                  <td>24</td>
+                  <td>
+                    <div class="progress-bar-wrap">
+                      <div class="progress-bar-fill" style="width:80%"></div>
+                    </div>
+                  </td>
+                  <td>✔ 4.9</td>
+                </tr>
+                <tr>
+                  <td><b>Rodrigo Silva</b></td>
+                  <td>
+                    <div class="status-dot-row">
+                      <div class="sdot g"></div> Em rota
+                    </div>
+                  </td>
+                  <td>21</td>
+                  <td>
+                    <div class="progress-bar-wrap">
+                      <div class="progress-bar-fill" style="width:70%"></div>
+                    </div>
+                  </td>
+                  <td>✔ 4.8</td>
+                </tr>
+                <tr>
+                  <td><b>Felipe Andrade</b></td>
+                  <td>
+                    <div class="status-dot-row">
+                      <div class="sdot y"></div> Disponível
+                    </div>
+                  </td>
+                  <td>17</td>
+                  <td>
+                    <div class="progress-bar-wrap">
+                      <div class="progress-bar-fill" style="width:57%"></div>
+                    </div>
+                  </td>
+                  <td>✔ 4.7</td>
+                </tr>
+                <tr>
+                  <td><b>Lucas Pereira</b></td>
+                  <td>
+                    <div class="status-dot-row">
+                      <div class="sdot r"></div> Pausa
+                    </div>
+                  </td>
+                  <td>15</td>
+                  <td>
+                    <div class="progress-bar-wrap">
+                      <div class="progress-bar-fill" style="width:50%"></div>
+                    </div>
+                  </td>
+                  <td>✔ 4.6</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PARA CLIENTES -->
+  <section class="clientes-section" id="clientes">
+    <div class="section-eyebrow">Para Estabelecimentos</div>
+    <div class="section-title">Feito para quem opera<br>em <em>alto volume</em></div>
+    <div class="clientes-layout">
+      <div>
+        <div class="section-desc">Restaurantes, pizzarias, redes de farmácias — qualquer negócio que precise de
+          entregadores em quantidade variável ao longo da semana.</div>
+        <div class="feature-list">
+          <div class="feature-item">
+            <div class="feature-icon">🗓</div>
+            <div>
+              <h5>Configuração de demanda por dia</h5>
+              <p>Defina mínimo e máximo de motoboys para cada dia separadamente. Fim de semana com 20, segunda com 5?
+                Sem problema.</p>
+            </div>
+          </div>
+          <div class="feature-item">
+            <div class="feature-icon">✓</div>
+            <div>
+              <h5>Escalonamento automático</h5>
+              <p>A 2brothers distribui os motoboys certos automaticamente. Se um não aparece, outro é acionado sem que
+                você precise fazer nada.</p>
+            </div>
+          </div>
+          <div class="feature-item">
+            <div class="feature-icon">📊</div>
+            <div>
+              <h5>Relatórios e faturamento unificado</h5>
+              <p>Uma única nota fiscal da 2brothers. Sem ter que gerenciar dezenas de pagamentos para diferentes
+                entregadores.</p>
+            </div>
+          </div>
+          <div class="feature-item">
+            <div class="feature-icon">✅</div>
+            <div>
+              <h5>Sem risco trabalhista</h5>
+              <p>O contrato B2B protege legalmente seu estabelecimento. Nenhum motoboy pode mover processo trabalhista
+                contra você.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Exemplo real de demanda -->
+      <div class="demand-example">
+        <div class="de-header">
+          <div class="de-client">
+            <div class="de-avatar">🍕</div>
+            <div>
+              <div class="de-client-name">Pizzaria Bella Napoli</div>
+              <div class="de-client-sub">1.000+ pizzas por fim de semana</div>
+            </div>
+          </div>
+          <div class="de-period">Semana 14 · Abr 2026</div>
+        </div>
+        <div class="de-body">
+          <div class="de-week">
+            <div class="de-day inactive">
+              <div class="de-day-name">Seg</div>
+              <div class="de-day-min">—</div>
+            </div>
+            <div class="de-day inactive">
+              <div class="de-day-name">Ter</div>
+              <div class="de-day-min">—</div>
+            </div>
+            <div class="de-day active">
+              <div class="de-day-name">Qua</div>
+              <div class="de-day-min">8</div>
+              <div class="de-day-slash">/</div>
+              <div class="de-day-max">máx 12</div>
+            </div>
+            <div class="de-day active">
+              <div class="de-day-name">Qui</div>
+              <div class="de-day-min">8</div>
+              <div class="de-day-slash">/</div>
+              <div class="de-day-max">máx 12</div>
+            </div>
+            <div class="de-day active">
+              <div class="de-day-name">Sex</div>
+              <div class="de-day-min">12</div>
+              <div class="de-day-slash">/</div>
+              <div class="de-day-max">máx 18</div>
+            </div>
+            <div class="de-day active">
+              <div class="de-tag">🔥</div>
+              <div class="de-day-name">Sáb</div>
+              <div class="de-day-min">15</div>
+              <div class="de-day-slash">/</div>
+              <div class="de-day-max">máx 22</div>
+            </div>
+            <div class="de-day active">
+              <div class="de-tag">🔥</div>
+              <div class="de-day-name">Dom</div>
+              <div class="de-day-min">15</div>
+              <div class="de-day-slash">/</div>
+              <div class="de-day-max">máx 22</div>
+            </div>
+          </div>
+          <div class="de-note">
+            ⚡ <span><strong>Lógica do mínimo e máximo:</strong> A 2brothers sempre garante pelo menos o mínimo
+              configurado. Conforme a demanda cresce durante o dia, aciona motoboys extras até o máximo. Você nunca fica
+              descoberto e nunca paga por capacidade ociosa.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PLANOS -->
+  <section class="planos" id="planos">
+    <div class="section-eyebrow">Planos</div>
+    <div class="section-title">Escolha o plano<br>certo para sua operação</div>
+    <div class="section-desc">Sem taxa de adesão. Cancele quando quiser. Todos os contratos são 100% B2B.</div>
+    <div class="planos-grid">
+      <div class="plano-card">
+        <div class="plano-name">Starter</div>
+        <div class="plano-price">R$890<span>/mês</span></div>
+        <div class="plano-desc">Para estabelecimentos que estão começando com delivery</div>
+        <ul class="plano-features">
+          <li>Até 5 motoboys simultâneos</li>
+          <li>Configuração de demanda semanal</li>
+          <li>Dashboard básico</li>
+          <li>Substituição automática</li>
+          <li>API para integração com seu sistema</li>
+          <li>Suporte via WhatsApp</li>
+          <li>1 contrato B2B incluso</li>
+        </ul>
+        <button class="btn-plano dark" onclick="openModal()">Começar agora</button>
+      </div>
+      <div class="plano-card ">
+        <div class="plano-badge">🔥 Mais escolhido</div>
+        <div class="plano-name">Business</div>
+        <div class="plano-price">R$2.490<span>/mês</span></div>
+        <div class="plano-desc">Para pizzarias, restaurantes e redes com alto volume</div>
+        <ul class="plano-features">
+          <li>Até 25 motoboys simultâneos</li>
+          <li>Mín. e máx. configurável por dia</li>
+          <li>Dashboard completo com métricas</li>
+          <li>Rastreamento em tempo real</li>
+          <li>API para integração com seu sistema</li>
+          <li>Substituição em até 20 minutos</li>
+          <li>Relatório financeiro mensal</li>
+          <li>Suporte prioritário 7 dias/semana</li>
+        </ul>
+        <button class="btn-plano outline" onclick="openModal()">Solicitar demo</button>
+      </div>
+      <div class="plano-card">
+        <div class="plano-name">Enterprise</div>
+        <div class="plano-price" style="font-size:1.8rem; line-height:1.3">Sob<br>medida</div>
+        <div class="plano-desc">Para redes com múltiplas unidades e volume acima de 50 motoboys</div>
+        <ul class="plano-features">
+          <li>Motoboys ilimitados</li>
+          <li>SLA garantido em contrato</li>
+          <li>Gerente de conta exclusivo</li>
+          <li>API para integração com seu sistema</li>
+          <li>Múltiplas unidades num painel</li>
+          <li>Relatórios customizados</li>
+          <li>Treinamento da equipe incluso</li>
+        </ul>
+        <button class="btn-plano dark" onclick="openModal()">Falar com comercial</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTATO -->
+  <section class="contato" id="contato">
+    <div class="section-eyebrow">Contato</div>
+    <div class="section-title">Vamos conversar<br>sobre sua operação</div>
+    <div class="contato-layout">
+      <div class="form-wrap">
+        <h3>Solicite uma demonstração</h3>
+        <p class="form-sub">Nossa equipe entra em contato em até 2 horas em dias úteis.</p>
+        <form id="contactForm">
+          <div class="form-tabs">
+            <button class="form-tab active" type="button" onclick="switchTab(this,'empresa')">🏢 Sou
+              estabelecimento</button>
+            <button class="form-tab" type="button" onclick="switchTab(this,'motoboy')">🏍 Sou motoboy</button>
+          </div>
+
+          <div id="tab-empresa">
+            <div class="field-row">
+              <div class="field"><label>Nome do responsável</label><input type="text" id="nomeResponsavel"
+                  name="nomeResponsavel" placeholder="João Silva" required /></div>
+              <div class="field"><label>Nome do estabelecimento</label><input type="text" id="nomeEstabelecimento"
+                  name="nomeEstabelecimento" placeholder="Pizzaria Bella Napoli" required /></div>
+            </div>
+            <div class="field-row">
+              <div class="field"><label>Segmento</label>
+                <select id="segmentoEmpresa" name="segmentoEmpresa" required>
+                  <option value="Pizzaria / Restaurante">Pizzaria / Restaurante</option>
+                  <option value="Rede de Farmácias">Rede de Farmácias</option>
+                  <option value="E-commerce">E-commerce</option>
+                  <option value="Supermercado">Supermercado</option>
+                  <option value="Outro">Outro</option>
+                </select>
+              </div>
+              <div class="field"><label>Cidade</label><input type="text" id="cidadeEmpresa" name="cidadeEmpresa"
+                  placeholder="São Paulo, SP" required /></div>
+            </div>
+            <div class="field-row">
+              <div class="field"><label>Telefone / WhatsApp</label><input type="tel" id="telefoneEmpresa"
+                  name="telefoneEmpresa" placeholder="(11) 99999-9999" required /></div>
+              <div class="field"><label>E-mail</label><input type="email" id="emailEmpresa" name="emailEmpresa"
+                  placeholder="joao@pizzaria.com" required /></div>
+            </div>
+            <div class="field">
+              <label>Quantos motoboys você precisa por dia (estimativa)?</label>
+              <select id="demandaEmpresa" name="demandaEmpresa" required>
+                <option value="Menos de 5">Menos de 5</option>
+                <option value="5 a 10">5 a 10</option>
+                <option value="10 a 20">10 a 20</option>
+                <option value="20 a 50">20 a 50</option>
+                <option value="Mais de 50">Mais de 50</option>
+              </select>
+            </div>
+            <div class="field">
+              <label>Conte sobre sua operação (opcional)</label>
+              <textarea id="operacaoEmpresa" name="operacaoEmpresa"
+                placeholder="Ex: Vendemos ~1.000 pizzas nos fins de semana e precisamos de 15 a 20 motoboys..."></textarea>
+            </div>
+          </div>
+
+          <div id="tab-motoboy" style="display:none">
+            <div class="field-row">
+              <div class="field"><label>Nome completo</label><input type="text" id="nomeMotoboy" name="nomeMotoboy"
+                  placeholder="Carlos Mendes" required /></div>
+              <div class="field"><label>CPF</label><input type="text" id="cpfMotoboy" name="cpfMotoboy"
+                  placeholder="000.000.000-00" required /></div>
+            </div>
+            <div class="field-row">
+              <div class="field"><label>Telefone / WhatsApp</label><input type="tel" id="telefoneMotoboy"
+                  name="telefoneMotoboy" placeholder="(11) 99999-9999" required /></div>
+              <div class="field"><label>Cidade</label><input type="text" id="cidadeMotoboy" name="cidadeMotoboy"
+                  placeholder="São Paulo, SP" required /></div>
+            </div>
+            <div class="field-row">
+              <div class="field"><label>Categoria CNH</label>
+                <select id="cnhMotoboy" name="cnhMotoboy" required>
+                  <option value="A">A</option>
+                  <option value="AB">AB</option>
+                </select>
+              </div>
+              <div class="field"><label>Possui MEI?</label>
+                <select id="meiMotoboy" name="meiMotoboy" required>
+                  <option value="Sim, já tenho MEI">Sim, já tenho MEI</option>
+                  <option value="Não — preciso abrir">Não — preciso abrir</option>
+                  <option value="Não sei o que é">Não sei o que é</option>
+                </select>
+              </div>
+            </div>
+            <div class="field"><label>Modelo e ano da moto</label><input type="text" id="motoMotoboy" name="motoMotoboy"
+                placeholder="Honda CG 160 · 2022" required /></div>
+          </div>
+
+          <button class="form-submit" type="submit">Enviar solicitação →</button>
+        </form>
+      </div>
+
+      <div class="contato-info">
+        <div class="info-block">
+          <h4>Por que clientes escolhem a 2brothers?</h4>
+          <p>Porque nós resolvemos o problema que mais atrapalha operações de delivery: a imprevisibilidade de mão de
+            obra. Você define a regra, nós garantimos a execução.</p>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">☎</div>
+          <div>
+            <div class="contact-label">Telefone comercial</div>
+            <div class="contact-val">(11) 4000-7890</div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">💬</div>
+          <div>
+            <div class="contact-label">WhatsApp</div>
+            <div class="contact-val">(11) 99000-1234</div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">📧</div>
+          <div>
+            <div class="contact-label">E-mail</div>
+            <div class="contact-val">contato@2brothers.com.br</div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">📍</div>
+          <div>
+            <div class="contact-label">Sede</div>
+            <div class="contact-val">São Paulo · SP</div>
+          </div>
+        </div>
+        <br>
+        <div class="info-block">
+          <h4>Horário de atendimento</h4>
+          <p>Segunda a sexta: 8h às 18h<br>Sábado e domingo: suporte via app para clientes ativos</p>
+
+          <h4 style="margin-top: 1.5rem;">Sócios Fundadores</h4>
+
+          <div class="socios-container">
+            <div class="socio-item">
+              <div class="socio-name">Paulo Renan Queiroz – Diretor de Tecnologia</div>
+              <div class="socio-contact">📞 (11) 95129-2745</div>
+              <div class="socio-contact">✉️ renanqueirozdesousa07@gmail.com</div>
+            </div>
+
+            <div class="socio-item">
+              <div class="socio-name">Fernando Melchiades de Jesus – Diretor Comercial</div>
+              <div class="socio-contact">📞 (11) 97391-8794</div>
+              <div class="socio-contact">✉️ joao@empresa.com.br</div>
+            </div>
+
+            <div class="socio-item">
+              <div class="socio-name">Marcia Rodrigues da Silva – Diretora Administrativa</div>
+              <div class="socio-contact">📞 (11) 98122-6094</div>
+              <div class="socio-contact">✉️ maria@empresa.com.br</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <div class="footer-top">
+    <div>
+      <div class="footer-logo">2brothers</div>
+      <div class="footer-desc">Plataforma B2B de fornecimento e gestão de motoboys para estabelecimentos. Você define a
+        demanda — a gente entrega.</div>
+    </div>
+    <div class="footer-col">
+      <h5>Produto</h5>
+      <ul>
+        <li><a href="#">Como funciona</a></li>
+        <li><a href="#">Painel de controle</a></li>
+        <li><a href="#">API & Integrações</a></li>
+        <li><a href="#">Planos</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Empresa</h5>
+      <ul>
+        <li><a href="#">Sobre nós</a></li>
+        <li><a href="#">Blog</a></li>
+        <li><a href="#">Vagas</a></li>
+        <li><a href="#">Imprensa</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Legal</h5>
+      <ul>
+        <li><a href="#">Termos de uso</a></li>
+        <li><a href="#">Privacidade</a></li>
+        <li><a href="#">Contrato B2B</a></li>
+        <li><a href="#">Compliance</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 2brothers Tecnologia LTDA · CNPJ 00.000.000/0001-00</p>
+    <div class="footer-tcc">⭐ Projeto desenvolvido para <strong>TCC · Curso Full Stack</strong></div>
+  </div>
+  </footer>
+
+  <!-- MODAL -->
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="modal-box">
+      <div class="modal-emoji">✓</div>
+      <h3>Solicitação enviada!</h3>
+      <p>Nossa equipe comercial entrará em contato via WhatsApp em até <strong style="color:var(--red)">2 horas</strong>
+        em dias úteis. Obrigado pelo interesse na 2brothers!</p>
+      <button class="modal-close-btn" onclick="closeModal()">Perfeito!</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

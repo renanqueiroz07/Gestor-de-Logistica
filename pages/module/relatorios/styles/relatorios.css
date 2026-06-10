@@ -1,0 +1,11 @@
+:root{}
+.content-grid{display:grid;grid-template-columns:1fr 360px;gap:12px}
+.metrics-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;margin-bottom:14px}
+.mini-panel{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:12px}
+.orders-panel{background:var(--surface);border:1px solid var(--border);border-radius:12px;overflow:hidden}
+.panel-body{padding:12px}
+.reports-table{width:100%;border-collapse:collapse}
+.reports-table th, .reports-table td{padding:8px;border-bottom:1px solid var(--border);font-size:13px}
+.reports-table th{font-weight:700;text-align:left}
+.form-input{padding:8px;border-radius:8px;border:1px solid var(--border2);background:transparent;color:var(--text)}
+@media(max-width:1120px){.content-grid{grid-template-columns:1fr}}

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2Brothers - Ingestao de Pedidos</title>
+<link rel="icon" type="image/svg+xml" href="../../../favicon.svg">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../../inicio.server/delivery_b2b_dashboard.css">
+<link rel="stylesheet" href="./styles/order-ingestion.css">
+<script defer src="../../../inicio.server/theme.js"></script>
+</head>
+<body>
+<div class="app">
+  <div class="topbar">
+    <div class="logo"><div class="logo-dot"></div>2Brothers <span style="font-size:11px;color:var(--muted);font-weight:400;margin-left:4px">B2B Delivery</span></div>
+    <div class="topbar-right"><div class="time-display" id="clock">00:00:00</div><div class="status-badge"><div class="status-dot"></div>Gateway ativo</div><div class="avatar">RH</div></div>
+  </div>
+  <div class="sidebar">
+    <div class="nav-item" onclick="window.location.href='../../../inicio.server/delivery_b2b_dashboard.html'">Dashboard</div>
+    <div class="nav-item active">Ingestao de Pedidos<div class="nav-badge">24</div></div>
+    <div class="nav-item" onclick="window.location.href='../routing-engine/'">Roteamento Inteligente</div>
+    <div class="nav-item" onclick="window.location.href='../driver-app/'">App do Motoboy</div>
+    <div class="nav-item" onclick="window.location.href='../configuracoes/'">Configuracoes</div>
+    <div class="sidebar-footer"><div class="company-tag">Endpoint</div><div class="company-name mono">POST /api/v1/orders/ingest</div></div>
+  </div>
+  <main class="main feature-main">
+    <section class="feature-header">
+      <div><div class="eyebrow">Order Ingestion Gateway</div><h1>Ancora de Recebimento de Pedidos</h1><p>Entrada unificada para WhatsApp Business, iFood, 99Food/99Delivery e Keeta com adapters, autenticacao, validacao e fila assincrona.</p></div>
+      <button class="btn-sm active" id="simulateOrder">Simular pedido</button>
+    </section>
+    <section class="metrics-row">
+      <div class="metric-card"><div class="metric-label">Recebidos hoje</div><div class="metric-value">1.284</div><div class="metric-sub"><span class="up">+18%</span> vs ontem</div></div>
+      <div class="metric-card"><div class="metric-label">Em fila</div><div class="metric-value" id="queuedCount">37</div><div class="metric-sub">retry automatico</div></div>
+      <div class="metric-card"><div class="metric-label">Falhas ingestao</div><div class="metric-value" style="color:var(--warn)">4</div><div class="metric-sub">dead-letter queue</div></div>
+      <div class="metric-card"><div class="metric-label">P95 validacao</div><div class="metric-value">86ms</div><div class="metric-sub">schema + auth</div></div>
+    </section>
+    <section class="feature-grid">
+      <div class="orders-panel">
+        <div class="panel-header"><div class="panel-title">Pedidos recebidos em tempo real</div></div>
+        <div class="panel-body stream-list" id="streamList"></div>
+      </div>
+      <div class="orders-panel">
+        <div class="panel-header"><div class="panel-title">Adapters por origem</div></div>
+        <div class="panel-body adapter-grid">
+          <div class="adapter-card ok"><strong>WhatsApp Business API</strong><span>Webhook estruturado + HMAC</span></div>
+          <div class="adapter-card ok"><strong>iFood Partner API</strong><span>Polling incremental + API key</span></div>
+          <div class="adapter-card warn"><strong>99Food / 99Delivery</strong><span>Webhook configuravel</span></div>
+          <div class="adapter-card ok"><strong>Keeta</strong><span>Webhook ou polling fallback</span></div>
+        </div>
+      </div>
+      <div class="orders-panel wide">
+        <div class="panel-header"><div class="panel-title">Contrato tecnico</div></div>
+        <div class="panel-body"><pre class="code-block">POST /api/v1/orders/ingest
+Headers: x-api-key | x-hmac-signature
+Body: { source, tenantId, payload }
+Responses: 202 queued, 400 schema errors, 401 auth failure
+Queue: retry automatico com dead-letter queue</pre></div>
+      </div>
+    </section>
+  </main>
+</div>
+<script src="./scripts/order-ingestion.js"></script>
+</body>
+</html>

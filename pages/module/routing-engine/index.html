@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2Brothers - Motor de Roteamento</title>
+<link rel="icon" type="image/svg+xml" href="../../../favicon.svg">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../../inicio.server/delivery_b2b_dashboard.css">
+<link rel="stylesheet" href="../order-ingestion/styles/order-ingestion.css">
+<link rel="stylesheet" href="./styles/routing-engine.css">
+<script defer src="../../../inicio.server/theme.js"></script>
+</head>
+<body>
+<div class="app">
+  <div class="topbar"><div class="logo"><div class="logo-dot"></div>2Brothers <span style="font-size:11px;color:var(--muted);font-weight:400;margin-left:4px">B2B Delivery</span></div><div class="topbar-right"><div class="time-display" id="clock">00:00:00</div><div class="status-badge"><div class="status-dot"></div>Rotas otimizadas</div><div class="avatar">RH</div></div></div>
+  <div class="sidebar">
+    <div class="nav-item" onclick="window.location.href='../../../inicio.server/delivery_b2b_dashboard.html'">Dashboard</div>
+    <div class="nav-item" onclick="window.location.href='../order-ingestion/'">Ingestao de Pedidos</div>
+    <div class="nav-item active">Roteamento Inteligente</div>
+    <div class="nav-item" onclick="window.location.href='../driver-app/'">App do Motoboy</div>
+    <div class="nav-item" onclick="window.location.href='../rotas/'">Mapa ao vivo</div>
+  </div>
+  <main class="main feature-main">
+    <section class="feature-header"><div><div class="eyebrow">VRP simplificado</div><h1>Motor de Roteamento Inteligente de Frota</h1><p>Otimiza entregas por proximidade, capacidade, carga atual, SLA e disponibilidade, com reatribuicao automatica em recusa.</p></div><button class="btn-sm active" id="reassignBtn">Reatribuir rota</button></section>
+    <section class="metrics-row">
+      <div class="metric-card"><div class="metric-label">Rotas ativas</div><div class="metric-value">18</div><div class="metric-sub">multi-ponto</div></div>
+      <div class="metric-card"><div class="metric-label">Distancia poupada</div><div class="metric-value">142km</div><div class="metric-sub"><span class="up">-11%</span> hoje</div></div>
+      <div class="metric-card"><div class="metric-label">SLA previsto</div><div class="metric-value">96%</div><div class="metric-sub">projecao atual</div></div>
+      <div class="metric-card"><div class="metric-label">Recusas</div><div class="metric-value" id="refusals">3</div><div class="metric-sub">reatribuicao ativa</div></div>
+    </section>
+    <section class="routing-grid">
+      <div class="orders-panel map-sim"><div class="panel-header"><div class="panel-title">Mapa operacional</div></div><div class="route-canvas"><div class="hub">HUB</div><div class="driver d1">M1</div><div class="driver d2">M2</div><div class="driver d3">M3</div><svg viewBox="0 0 600 330"><path d="M92 248 C190 180 250 82 420 94 S520 180 488 258" /><path d="M92 248 C180 300 270 270 360 220 S460 210 520 140" /></svg></div></div>
+      <div class="orders-panel"><div class="panel-header"><div class="panel-title">Criterios de atribuicao</div></div><div class="panel-body criteria-list"><div>Proximidade geografica <strong>40%</strong></div><div>Capacidade do motoboy <strong>20%</strong></div><div>Carga atual <strong>25%</strong></div><div>SLA maximo por pedido <strong>15%</strong></div></div></div>
+    </section>
+  </main>
+</div>
+<script src="./scripts/routing-engine.js"></script>
+</body>
+</html>

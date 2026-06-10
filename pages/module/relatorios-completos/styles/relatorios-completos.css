@@ -1,0 +1,45 @@
+.reports-main { display: flex; flex-direction: column; gap: 16px; }
+.reports-header { display: flex; justify-content: space-between; align-items: flex-start; gap: 18px; background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 18px; }
+.reports-header h1 { font-size: 30px; line-height: 1; margin: 6px 0 8px; letter-spacing: 0; }
+.reports-header p, .panel-subtitle { color: var(--muted); font-size: 12px; line-height: 1.5; }
+.eyebrow { color: var(--accent); font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; }
+.header-actions { display: flex; gap: 8px; flex-wrap: wrap; justify-content: flex-end; max-width: 620px; }
+.form-input { min-height: 32px; padding: 7px 10px; border-radius: 8px; border: 1px solid var(--border2); background: var(--surface2); color: var(--text); font-family: var(--font); }
+.report-tabs { display: flex; gap: 8px; flex-wrap: wrap; }
+.tab-btn { border: 1px solid var(--border2); background: var(--surface); color: var(--muted); border-radius: 8px; padding: 9px 12px; font-family: var(--font); font-weight: 700; cursor: pointer; }
+.tab-btn.active { color: #ffffff; background: var(--accent); border-color: var(--accent); }
+.metric-card { cursor: default; }
+.report-grid { display: grid; grid-template-columns: 1.45fr 0.85fr; gap: 12px; }
+.wide-panel { min-height: 320px; }
+.panel-body { padding: 16px; }
+.line-chart { width: 100%; height: 250px; display: block; }
+.axis { stroke: rgba(255,255,255,0.1); stroke-width: 1; }
+.trend-line { fill: none; stroke: var(--accent); stroke-width: 4; stroke-linecap: round; stroke-linejoin: round; }
+.trend-area { fill: rgba(255,107,19,0.12); }
+.chart-label { fill: var(--muted); font-size: 11px; font-family: var(--font); }
+.chart-point { fill: var(--surface); stroke: var(--accent); stroke-width: 3; }
+.donut-wrap { display: grid; grid-template-columns: 160px 1fr; align-items: center; gap: 14px; }
+.donut { width: 150px; height: 150px; border-radius: 50%; background: conic-gradient(var(--accent) 0 42%, var(--accent2) 42% 70%, var(--warn) 70% 88%, var(--info) 88% 100%); position: relative; }
+.donut:after { content: ""; position: absolute; inset: 34px; border-radius: 50%; background: var(--surface); border: 1px solid var(--border); }
+.legend-list { display: flex; flex-direction: column; gap: 9px; }
+.legend-row, .ranking-row, .insight-row { display: flex; align-items: center; gap: 10px; padding: 9px 0; border-bottom: 1px solid var(--border); }
+.legend-row:last-child, .ranking-row:last-child, .insight-row:last-child { border-bottom: none; }
+.legend-dot { width: 9px; height: 9px; border-radius: 50%; flex: 0 0 auto; }
+.ranking-row { align-items: stretch; flex-direction: column; }
+.ranking-head { display: flex; justify-content: space-between; font-size: 12px; font-weight: 700; }
+.bar-track { height: 8px; border-radius: 999px; background: rgba(255,255,255,0.06); overflow: hidden; }
+.bar-fill { height: 100%; border-radius: inherit; background: linear-gradient(90deg, var(--accent), var(--info)); }
+.insight-row { align-items: flex-start; font-size: 12px; color: var(--text); line-height: 1.45; }
+.insight-tag { min-width: 76px; text-align: center; border-radius: 999px; padding: 4px 8px; color: #ffffff; background: var(--warn); font-weight: 800; font-size: 10px; }
+.insight-tag.good { background: var(--green); }
+.insight-tag.risk { background: var(--danger); color: white; }
+.table-panel { margin-bottom: 12px; }
+.table-scroll { overflow-x: auto; }
+.reports-table { width: 100%; border-collapse: collapse; min-width: 860px; }
+.reports-table th, .reports-table td { padding: 11px 12px; border-bottom: 1px solid var(--border); text-align: left; font-size: 12px; }
+.reports-table th { color: var(--muted); text-transform: uppercase; letter-spacing: 0.7px; font-size: 10px; }
+@media (max-width: 1120px) {
+  .reports-header, .header-actions { flex-direction: column; align-items: stretch; }
+  .report-grid { grid-template-columns: 1fr; }
+  .donut-wrap { grid-template-columns: 1fr; justify-items: center; }
+}

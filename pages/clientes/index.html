@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2Brothers - Clientes</title>
+  <link rel="icon" type="image/svg+xml" href="../../favicon.svg">
+  <link 
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="../../inicio.server/delivery_b2b_dashboard.css">
+  <link rel="stylesheet" href="./styles/clientes.css">
+  <script defer src="../../inicio.server/theme.js"></script>
+</head>
+
+<body>
+  <div class="app">
+    <div class="topbar">
+      <div class="logo">2Brothers <span style="font-size:11px;color:var(--muted);font-weight:400;margin-left:4px">B2B
+          Delivery</span></div>
+      <div class="topbar-right">
+        <div class="time-display" id="clock">00:00:00</div>
+        <div class="status-badge">
+          <div class="status-dot"></div>Sistema ativo
+        </div>
+        <div class="avatar">RH</div>
+      </div>
+    </div>
+
+    <div class="sidebar">
+      <div class="nav-item" onclick="window.location.href='../../inicio.server/delivery_b2b_dashboard.html'">Dashboard
+      </div>
+      <div class="nav-item" onclick="window.location.href='../module/rotas/'">Rotas ao vivo<div class="nav-badge">3
+        </div>
+      </div>
+      <div class="nav-item" onclick="window.location.href='../module/pedidos/'">Pedidos<div class="nav-badge">7</div>
+      </div>
+      <div class="nav-item" onclick="window.location.href='../module/entregadores/'">Entregadores<div class="nav-badge">
+          12</div>
+      </div>
+      <div class="nav-item active" onclick="window.location.href='./'">Clientes<div class="nav-badge" id="clientsBadge">
+          0</div>
+      </div>
+      <div class="nav-item" onclick="window.location.href='../module/relatorios-completos/'">Relatorios Completos<div
+          class="nav-badge">5</div>
+      </div>
+      <div class="nav-item" onclick="window.location.href='../module/configuracoes/'">Configuracoes</div>
+    </div>
+
+    <div class="main">
+      <div class="metrics-row" id="clientsMetrics"></div>
+
+      <div class="content-grid">
+        <div class="orders-panel">
+          <div class="panel-header">
+            <div class="panel-title">Listagem de Clientes</div>
+            <button class="btn-sm active" id="btnNewClient">+ Novo</button>
+          </div>
+          <div class="deliverer-controls">
+            <input id="searchInput" class="form-input" placeholder="Buscar cliente, e-mail ou telefone" />
+            <div class="filter-row">
+              <select id="statusFilter" class="form-input">
+                <option value="all">Todos os status</option>
+                <option value="active">Ativo</option>
+                <option value="inactive">Inativo</option>
+              </select>
+            </div>
+          </div>
+          <div id="clientList" class="orders-list"></div>
+          <div id="pagination" class="pagination"></div>
+        </div>
+
+        <div class="map-panel">
+          <div class="panel-header">
+            <div class="panel-title">Perfil / Pedidos</div>
+          </div>
+          <div class="panel-body">
+            <div id="clientDetails" class="mini-panel"></div>
+            <div id="clientOrders" class="mini-panel"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="./clientes.js"></script>
+</body>
+
+</html>

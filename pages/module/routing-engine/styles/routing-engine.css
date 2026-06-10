@@ -1,0 +1,14 @@
+.routing-grid { display: grid; grid-template-columns: 1.4fr 0.8fr; gap: 12px; }
+.map-sim { min-height: 380px; }
+.route-canvas { position: relative; height: 330px; background: radial-gradient(circle at 30% 30%, rgba(255,107,19,0.13), transparent 28%), var(--surface2); overflow: hidden; }
+.route-canvas svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+.route-canvas path { fill: none; stroke: var(--accent); stroke-width: 4; stroke-dasharray: 12 8; opacity: 0.75; }
+.hub, .driver { position: absolute; width: 46px; height: 46px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 800; z-index: 2; }
+.hub { left: 70px; bottom: 58px; background: var(--accent); color: #ffffff; }
+.driver { background: var(--surface); border: 2px solid var(--accent2); color: var(--text); }
+.d1 { left: 68%; top: 20%; }
+.d2 { left: 82%; top: 68%; }
+.d3 { left: 48%; top: 58%; }
+.criteria-list { display: flex; flex-direction: column; gap: 12px; }
+.criteria-list div { display: flex; justify-content: space-between; border-bottom: 1px solid var(--border); padding-bottom: 10px; font-size: 12px; }
+@media(max-width: 980px){ .routing-grid { grid-template-columns: 1fr; } }

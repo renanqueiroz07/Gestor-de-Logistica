@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2Brothers - Rotas</title>
+<link rel="icon" type="image/svg+xml" href="../../../favicon.svg">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<!-- Leaflet CSS (igual ao dashboard) -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+<link rel="stylesheet" href="../../../inicio.server/delivery_b2b_dashboard.css">
+<script defer src="../../../inicio.server/theme.js"></script>
+</head>
+<body>
+<div class="notification" id="notification">
+  <div class="notif-title">
+    <div class="status-dot"></div>
+    Novo pedido recebido
+  </div>
+  <div class="notif-body" id="notif-body">Restaurante Bella Vila — 18 itens — R$ 847,00</div>
+  <div class="notif-actions">
+    <button class="notif-btn notif-accept" onclick="acceptOrder()">Aceitar e rotear</button>
+    <button class="notif-btn notif-dismiss" onclick="dismissNotif()">Dispensar</button>
+  </div>
+</div>
+
+<div class="app">
+  <div class="topbar">
+    <div class="logo">
+      <div class="logo-dot"></div>
+      2Brothers
+      <span style="font-size:11px;color:var(--muted);font-weight:400;margin-left:4px">B2B Delivery</span>
+    </div>
+    <div class="topbar-right">
+      <div class="time-display" id="clock">00:00:00</div>
+      <div class="status-badge"><div class="status-dot"></div>Sistema ativo</div>
+      <button class="btn-sm active" onclick="showNotif()">+ Simular Pedido</button>
+      <div class="avatar">RH</div>
+    </div>
+  </div>
+
+  <div class="sidebar">
+    <div class="nav-item" onclick="window.location.href='../../../inicio.server/delivery_b2b_dashboard.html'">
+      <svg class="nav-icon" viewBox="0 0 16 16" fill="none"><rect x="2" y="2" width="5" height="5" rx="1" fill="currentColor" opacity="0.8"/><rect x="9" y="2" width="5" height="5" rx="1" fill="currentColor" opacity="0.4"/><rect x="2" y="9" width="5" height="5" rx="1" fill="currentColor" opacity="0.4"/><rect x="9" y="9" width="5" height="5" rx="1" fill="currentColor" opacity="0.8"/></svg>
+      Dashboard
+    </div>
+    <div class="nav-item active">
+      <svg class="nav-icon" viewBox="0 0 16 16" fill="none"><path d="M8 2C5.24 2 3 4.24 3 7c0 3.75 5 9 5 9s5-5.25 5-9c0-2.76-2.24-5-5-5zm0 6.5c-.83 0-1.5-.67-1.5-1.5S7.17 5.5 8 5.5 9.5 6.17 9.5 7 8.83 8.5 8 8.5z" fill="currentColor" opacity="0.8"/></svg>
+      Rotas ao vivo
+      <div class="nav-badge">3</div>
+    </div>
+    <div class="nav-item" onclick="window.location.href='../pedidos/'">
+      <svg class="nav-icon" viewBox="0 0 16 16" fill="none"><path d="M2 4h12v9H2V4zm0-2h12l-1 2H3L2 2zm4 4h4v4H6V6z" fill="currentColor" opacity="0.8"/></svg>
+      Pedidos
+      <div class="nav-badge">7</div>
+    </div>
+    <div class="nav-item" onclick="window.location.href='../entregadores/'">
+      <svg class="nav-icon" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="5" r="3" fill="currentColor" opacity="0.8"/><path d="M2 14c0-3.31 2.69-6 6-6s6 2.69 6 6" fill="currentColor" opacity="0.4"/></svg>
+      Entregadores
+      <div class="nav-badge">12</div>
+    </div>
+    <div class="nav-item" onclick="window.location.href='../../clientes/'">
+      <svg class="nav-icon" viewBox="0 0 16 16" fill="none"><path d="M2 2h12v3H2zM2 7h12v7H2z" fill="currentColor" opacity="0.8"/></svg>
+      Clientes
+      <div class="nav-badge">0</div>
+    </div>
+    <div class="nav-item" onclick="window.location.href='../relatorios-completos/'"><svg class="nav-icon" viewBox="0 0 16 16" fill="none"><path d="M2 12L6 4l4 5 2-3 2 6H2z" fill="currentColor" opacity="0.8"/></svg>Relatorios Completos</div>
+    <div class="nav-item" onclick="window.location.href='../configuracoes/'"><svg class="nav-icon" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="2.5" fill="currentColor" opacity="0.8"/><path d="M8 1v2M8 13v2M1 8h2M13 8h2M3.22 3.22l1.41 1.41M11.37 11.37l1.41 1.41M3.22 12.78l1.41-1.41M11.37 4.63l1.41-1.41" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" opacity="0.5"/></svg>Configuracoes</div>
+
+    <div class="sidebar-footer">
+      <div class="company-tag">Empresa ativa</div>
+      <div class="company-name">2Brothers Tecnologia LTDA</div>
+    </div>
+  </div>
+
+  <div class="main">
+    <div class="metrics-row">
+      <div class="metric-card">
+        <div class="metric-label">Rotas ativas</div>
+        <div class="metric-value" style="color: var(--accent)">3</div>
+        <div class="metric-sub"><span class="up">↑ 2</span> hoje</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-label">Última atualização</div>
+        <div class="metric-value" style="color: var(--info)">Agora</div>
+        <div class="metric-sub">Status em tempo real</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-label">Entregadores ativos</div>
+        <div class="metric-value" style="color: var(--green)">8</div>
+        <div class="metric-sub">Monitoramento contínuo</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-label">Pedidos em rota</div>
+        <div class="metric-value" style="color: var(--warn)">18</div>
+        <div class="metric-sub">Última movimentação</div>
+      </div>
+    </div>
+
+    <div class="content-grid">
+      <div class="map-panel">
+        <div class="panel-header">
+          <div class="panel-title">Mapa de rotas em tempo real</div>
+          <div class="panel-actions">
+            <button class="btn-sm route-toggle-btn active" data-route="Rota A" onclick="toggleMapBtn(this,'Rota A')">Rota A</button>
+            <button class="btn-sm route-toggle-btn" data-route="Rota B" onclick="toggleMapBtn(this,'Rota B')">Rota B</button>
+            <button class="btn-sm route-toggle-btn" data-route="Rota C" onclick="toggleMapBtn(this,'Rota C')">Rota C</button>
+            <button class="btn-sm route-toggle-btn" data-route="Todas" onclick="toggleMapBtn(this,'Todas')">Todas</button>
+            <button class="btn-sm" onclick="optimizeRoutes()" style="margin-left: auto; background: var(--accent); color: #0d0f14;">Otimizar Rotas</button>
+          </div>
+        </div>
+        <div class="map-container">
+          <div id="map" style="height: 340px; width: 100%;"></div>
+        </div>
+        <div class="route-legend">
+          <div class="legend-item"><div class="legend-dot" style="background:var(--accent)"></div>Rota A — Zona Norte</div>
+          <div class="legend-item"><div class="legend-dot" style="background:var(--accent2)"></div>Rota B — Centro</div>
+          <div class="legend-item"><div class="legend-dot" style="background:var(--warn)"></div>Rota C — Zona Sul</div>
+          <div style="margin-left:auto;font-size:11px;color:var(--muted)">Atualização de rotas e entregadores em tempo real</div>
+        </div>
+      </div>
+
+      <div class="orders-panel">
+        <div class="panel-header">
+          <div class="panel-title">Rotas em destaque</div>
+          <button class="btn-sm" onclick="window.location.href='../../../inicio.server/delivery_b2b_dashboard.html'">Dashboard</button>
+        </div>
+        <div class="order-filters" id="ordersPanel">
+          <div class="filter-tab active" onclick="filterOrders(this,'all')">Todas</div>
+          <div class="filter-tab" onclick="filterOrders(this,'pending')">Pendente</div>
+          <div class="filter-tab" onclick="filterOrders(this,'transit')">Em trânsito</div>
+          <div class="filter-tab" onclick="filterOrders(this,'done')">Concluídas</div>
+        </div>
+        <div class="orders-list" id="ordersList"></div>
+      </div>
+    </div>
+
+    <div class="bottom-row">
+      <div class="mini-panel">
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:4px">
+          <div class="panel-title">Detalhes da rota</div>
+          <div id="routeDetailsStatus" style="font-size:10px;color:var(--accent);">● Atualizado agora</div>
+        </div>
+        <div id="routeDetailsMeta" style="font-size:11px;color:var(--muted);margin-bottom:8px;">Rota A · Hub central · Moto 🛵</div>
+        <div class="stops-list" id="routeStops"></div>
+      </div>
+
+      <!-- Removed 'Pedidos por Hora' and 'Entregadores' panels to simplify the Rotas page -->
+    </div>
+  </div>
+</div>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+<script src="../../../inicio.server/delivery_b2b_dashboard.js"></script>
+</body>
+</html>

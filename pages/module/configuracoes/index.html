@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2Brothers - Configuracoes</title>
+<link rel="icon" type="image/svg+xml" href="../../../favicon.svg">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../../inicio.server/delivery_b2b_dashboard.css">
+<link rel="stylesheet" href="./styles/configuracoes.css">
+<script defer src="../../../inicio.server/theme.js"></script>
+</head>
+<body>
+<div class="app">
+  <div class="topbar">
+    <div class="logo"><div class="logo-dot"></div>2Brothers <span style="font-size:11px;color:var(--muted);font-weight:400;margin-left:4px">B2B Delivery</span></div>
+    <div class="topbar-right">
+      <div class="time-display" id="clock">00:00:00</div>
+      <div class="status-badge"><div class="status-dot"></div>Sistema ativo</div>
+      <div class="avatar">RH</div>
+    </div>
+  </div>
+
+  <div class="sidebar">
+    <div class="nav-item" onclick="window.location.href='../../../inicio.server/delivery_b2b_dashboard.html'">Dashboard</div>
+    <div class="nav-item" onclick="window.location.href='../rotas/'">Rotas ao vivo<div class="nav-badge">3</div></div>
+    <div class="nav-item" onclick="window.location.href='../pedidos/'">Pedidos<div class="nav-badge">7</div></div>
+    <div class="nav-item" onclick="window.location.href='../entregadores/'">Entregadores<div class="nav-badge">12</div></div>
+    <div class="nav-item" onclick="window.location.href='../../clientes/'">Clientes<div class="nav-badge">340</div></div>
+    <div class="nav-item" onclick="window.location.href='../relatorios-completos/'">Relatorios Completos<div class="nav-badge">5</div></div>
+    <div class="nav-item active">Configuracoes</div>
+    <div class="sidebar-footer">
+      <div class="company-tag">Ambiente</div>
+      <div class="company-name">Production us-east-1</div>
+    </div>
+  </div>
+
+  <main class="main settings-main">
+    <section class="settings-header">
+      <div>
+        <div class="eyebrow">Painel tecnico</div>
+        <h1>Configuracoes do Dashboard</h1>
+        <p>Governanca de temas, permissoes, integracoes, auditoria e notificacoes por tenant.</p>
+      </div>
+      <button class="btn-sm active" id="saveSettings">Salvar configuracoes</button>
+    </section>
+
+    <section class="settings-grid">
+      <div class="settings-card">
+        <div class="card-title">Gerenciamento de temas</div>
+        <div class="theme-row">
+          <button class="seg-btn active" data-theme="light">Light</button>
+          <button class="seg-btn" data-theme="dark">Dark</button>
+        </div>
+        <label>Tenant</label>
+        <select class="form-input"><option>2Brothers default</option><option>Rede Food Premium</option><option>FarmaViva</option></select>
+        <label>Paleta customizada</label>
+        <div class="swatches">
+          <input type="color" id="colorAccent" value="#ff6b13" title="Cor principal">
+          <input type="color" id="colorAccent2" value="#073b72" title="Cor secundaria">
+          <input type="color" id="colorWarn" value="#f59e0b" title="Cor de alerta">
+          <input type="color" id="colorInfo" value="#0b4f93" title="Cor informativa">
+        </div>
+      </div>
+
+      <div class="settings-card">
+        <div class="card-title">Permissoes e roles</div>
+        <table class="settings-table">
+          <thead><tr><th>Recurso</th><th>Admin</th><th>Operador</th><th>Despachante</th><th>Visualizador</th></tr></thead>
+          <tbody>
+            <tr><td>Pedidos</td><td><input type="checkbox" checked></td><td><input type="checkbox" checked></td><td><input type="checkbox" checked></td><td><input type="checkbox" checked></td></tr>
+            <tr><td>Rotas</td><td><input type="checkbox" checked></td><td><input type="checkbox" checked></td><td><input type="checkbox" checked></td><td><input type="checkbox"></td></tr>
+            <tr><td>Configuracoes</td><td><input type="checkbox" checked></td><td><input type="checkbox"></td><td><input type="checkbox"></td><td><input type="checkbox"></td></tr>
+            <tr><td>Exportacoes</td><td><input type="checkbox" checked></td><td><input type="checkbox" checked></td><td><input type="checkbox" checked></td><td><input type="checkbox"></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="settings-card">
+        <div class="card-title">Integracoes</div>
+        <label>Webhook WhatsApp Business</label>
+        <input class="form-input mono" value="https://api.2brothers.local/api/v1/orders/ingest?source=whatsapp">
+        <label>API key iFood</label>
+        <div class="token-row"><input class="form-input mono" type="password" value="ifood_live_xxxxxxxxxxxxx"><button class="btn-sm">Rotacionar</button></div>
+        <label>Status de conexao</label>
+        <select class="form-input"><option>Todos conectados</option><option>Falhas recentes</option><option>Credenciais pendentes</option></select>
+      </div>
+
+      <div class="settings-card">
+        <div class="card-title">Logs e auditoria</div>
+        <div class="audit-list">
+          <div><strong>RH</strong> rotacionou API key do iFood <span>2026-05-22 09:42:18</span></div>
+          <div><strong>Admin</strong> alterou permissao de despachante <span>2026-05-22 08:11:03</span></div>
+          <div><strong>Operador</strong> exportou relatorio mensal <span>2026-05-21 17:55:44</span></div>
+        </div>
+        <button class="btn-sm">Exportar auditoria</button>
+      </div>
+
+      <div class="settings-card">
+        <div class="card-title">Notificacoes</div>
+        <div class="channel-row"><label><input type="checkbox" checked> E-mail</label><label><input type="checkbox" checked> Slack</label><label><input type="checkbox"> Push</label></div>
+        <label>Regra de disparo</label>
+        <select class="form-input"><option>SLA abaixo de 94%</option><option>Pedido parado por 12 min</option><option>Falha de webhook</option></select>
+        <label>Template</label>
+        <textarea class="form-input" rows="4">Alerta {{tenant}}: {{metric}} atingiu {{value}} em {{timestamp}}.</textarea>
+      </div>
+    </section>
+  </main>
+</div>
+<div class="toast" id="toast">Configuracoes salvas para o tenant selecionado.</div>
+<script src="./scripts/configuracoes.js"></script>
+</body>
+</html>

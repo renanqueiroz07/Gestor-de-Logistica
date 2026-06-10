@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2Brothers - Relatorios Completos</title>
+<link rel="icon" type="image/svg+xml" href="../../../favicon.svg">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../../inicio.server/delivery_b2b_dashboard.css">
+<link rel="stylesheet" href="./styles/relatorios-completos.css">
+<script defer src="../../../inicio.server/theme.js"></script>
+</head>
+<body>
+<div class="app">
+  <div class="topbar">
+    <div class="logo"><div class="logo-dot"></div>2Brothers <span style="font-size:11px;color:var(--muted);font-weight:400;margin-left:4px">B2B Delivery</span></div>
+    <div class="topbar-right">
+      <div class="time-display" id="clock">00:00:00</div>
+      <div class="status-badge"><div class="status-dot"></div>Sistema ativo</div>
+      <div class="avatar">RH</div>
+    </div>
+  </div>
+
+  <div class="sidebar">
+    <div class="nav-item" onclick="window.location.href='../../../inicio.server/delivery_b2b_dashboard.html'">Dashboard</div>
+    <div class="nav-item" onclick="window.location.href='../rotas/'">Rotas ao vivo<div class="nav-badge">3</div></div>
+    <div class="nav-item" onclick="window.location.href='../pedidos/'">Pedidos<div class="nav-badge">7</div></div>
+    <div class="nav-item" onclick="window.location.href='../entregadores/'">Entregadores<div class="nav-badge">12</div></div>
+    <div class="nav-item" onclick="window.location.href='../../clientes/'">Clientes<div class="nav-badge">340</div></div>
+    <div class="nav-item active" onclick="window.location.href='./'">Relatorios Completos<div class="nav-badge">5</div></div>
+    <div class="nav-item" onclick="window.location.href='../configuracoes/'">Configuracoes</div>
+    <div class="sidebar-footer">
+      <div class="company-tag">Empresa ativa</div>
+      <div class="company-name">2Brothers Tecnologia LTDA</div>
+    </div>
+  </div>
+
+  <main class="main reports-main">
+    <section class="reports-header">
+      <div>
+        <div class="eyebrow">Central analitica</div>
+        <h1>Relatorios Completos</h1>
+        <p>Resumo operacional com indicadores, graficos, rankings e exportacao para tomada de decisao.</p>
+      </div>
+      <div class="header-actions">
+        <input id="periodStart" class="form-input" type="date">
+        <input id="periodEnd" class="form-input" type="date">
+        <select id="tenantFilter" class="form-input">
+          <option value="all">Todos os tenants</option>
+          <option value="food">Food service</option>
+          <option value="pharma">Farmacias</option>
+          <option value="retail">Varejo local</option>
+        </select>
+        <button class="btn-sm active" id="exportCsv">Exportar CSV</button>
+        <button class="btn-sm" id="exportPdf">Exportar PDF</button>
+      </div>
+    </section>
+
+    <section class="report-tabs" id="reportTabs">
+      <button class="tab-btn active" data-report="diario">Resumo Diario</button>
+      <button class="tab-btn" data-report="semanal">Resumo Semanal</button>
+      <button class="tab-btn" data-report="mensal">Resumo Mensal</button>
+      <button class="tab-btn" data-report="trimestral">Resumo Trimestral</button>
+      <button class="tab-btn" data-report="semestral">Resumo Semestral</button>
+    </section>
+
+    <section class="metrics-row" id="kpiGrid"></section>
+
+    <section class="report-grid">
+      <div class="orders-panel wide-panel">
+        <div class="panel-header">
+          <div>
+            <div class="panel-title" id="trendTitle">Evolucao</div>
+            <div class="panel-subtitle" id="trendSubtitle">Comparativo do periodo selecionado</div>
+          </div>
+        </div>
+        <div class="panel-body">
+          <svg class="line-chart" id="lineChart" viewBox="0 0 640 220" role="img" aria-label="Grafico de linha"></svg>
+        </div>
+      </div>
+
+      <div class="map-panel">
+        <div class="panel-header"><div class="panel-title">Mix por categoria</div></div>
+        <div class="panel-body">
+          <div class="donut-wrap">
+            <div class="donut" id="donutChart"></div>
+            <div id="donutLegend" class="legend-list"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="orders-panel">
+        <div class="panel-header"><div class="panel-title">Ranking por categoria</div></div>
+        <div class="panel-body" id="rankingList"></div>
+      </div>
+
+      <div class="orders-panel">
+        <div class="panel-header"><div class="panel-title">Alertas e insights</div></div>
+        <div class="panel-body" id="insightsList"></div>
+      </div>
+    </section>
+
+    <section class="orders-panel table-panel">
+      <div class="panel-header">
+        <div>
+          <div class="panel-title">Tabela detalhada</div>
+          <div class="panel-subtitle">Dados de pedidos, SLA, faturamento, margem e ocorrencias</div>
+        </div>
+      </div>
+      <div class="table-scroll">
+        <table class="reports-table">
+          <thead>
+            <tr>
+              <th>Periodo</th><th>Pedidos</th><th>Concluidos</th><th>SLA</th><th>Receita</th><th>Margem</th><th>Top performer</th><th>Ocorrencias</th>
+            </tr>
+          </thead>
+          <tbody id="detailRows"></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+</div>
+<script src="./scripts/relatorios-completos.js"></script>
+</body>
+</html>

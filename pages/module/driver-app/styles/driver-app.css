@@ -1,0 +1,13 @@
+.driver-grid { display: grid; grid-template-columns: 340px 1fr; gap: 12px; }
+.phone-frame { width: 320px; min-height: 560px; border-radius: 30px; border: 10px solid var(--accent2); background: var(--surface2); padding: 18px; box-shadow: 0 22px 60px rgba(7,59,114,0.16); }
+.phone-top { font-size: 13px; font-weight: 800; margin-bottom: 14px; color: var(--accent); }
+.route-card-mobile { display: flex; flex-direction: column; gap: 10px; background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 14px; }
+.route-card-mobile span { color: var(--muted); font-size: 12px; }
+.route-card-mobile button { border: 0; border-radius: 10px; padding: 10px; background: var(--accent); color: #ffffff; font-weight: 800; }
+.route-card-mobile button.ghost { background: transparent; color: var(--muted); border: 1px solid var(--border2); }
+.waypoint { margin-top: 12px; padding: 12px; border-radius: 12px; background: rgba(255,255,255,0.04); border: 1px solid var(--border); font-size: 12px; }
+.waypoint.done { color: var(--green); }
+.waypoint.active { border-color: var(--accent); color: var(--accent); }
+.req-list { display: grid; grid-template-columns: repeat(2, minmax(180px, 1fr)); gap: 10px; }
+.req-list div { padding: 12px; border: 1px solid var(--border); border-radius: 10px; background: var(--surface2); font-size: 12px; }
+@media(max-width: 980px){ .driver-grid { grid-template-columns: 1fr; } .phone-frame { width: 100%; max-width: 340px; } .req-list { grid-template-columns: 1fr; } }
